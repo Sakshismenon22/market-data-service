@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface SecurityMasterService {
 
-    public Response<SecurityMaster> addSecurity(SecurityMaster securityMaster);
+    public SecurityMaster addSecurity(SecurityMaster securityMaster);
 
-    public Response<List<SecurityMaster>> getAllSecurities();
+    public List<SecurityMaster> getAllSecurities();
 
 }

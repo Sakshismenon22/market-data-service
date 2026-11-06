@@ -11,27 +11,61 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity 
-@Data 
-@AllArgsConstructor 
-@NoArgsConstructor 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.time.Instant;
+
+@Entity
+@Table(
+        name = "security_current_price",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "uk_security_current_price",
+                        columnNames = "security_id"
+                )
+        }
+)
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SecuritiesCurrentPrice {
 
-    @Id 
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    @OneToOne 
-    private Integer securityId;
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(
+            name = "security_id",
+            nullable = false,
+            unique = true
+    )
+    private SecurityMaster security;
 
-    private double open;
+    @Column(
+            name = "trade_date_timestamp",
+            nullable = false
+    )
+    private Instant tradeDateTimestamp;
 
-    private double close;
+    @Column(precision = 19, scale = 6)
+    private BigDecimal open;
 
-    private double high;
+    @Column(precision = 19, scale = 6)
+    private BigDecimal high;
 
-    private double low;
+    @Column(precision = 19, scale = 6)
+    private BigDecimal low;
 
-    private LocalDateTime tradedDateTimestamp;
-    
+    @Column(precision = 19, scale = 6)
+    private BigDecimal close;
+
+    private Long volume;
+
+    @Column(nullable = false)
+    private Instant updatedAt;
 }

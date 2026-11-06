@@ -7,28 +7,28 @@ import org.springframework.stereotype.Service;
 import com.example.market_data_service.model.SecuritiesCurrentPrice;
 
 @Service 
-public class SecuritiesCurrentPriceServiceImpl implements ISecuritiesCurrentPriceService{
-
-    @Override 
-    public SecuritiesCurrentPrice addSecuritiesCurrentPrice(SecuritiesCurrentPrice securitiesCurrentPrice){
-
-        
-    }
-
-    @Override 
-    public SecuritiesCurrentPrice updateSecuritiesCurrentPrice(SecuritiesCurrentPrice securitiesCurrentPrice){
-
-    }
-
-    @Override 
-    public String deleteSecuritiesCurrentPrice(Integer id){
-        
-    }
-
-    @Override 
-    public List<SecuritiesCurrentPrice> getAllSecuritiesCurrentPrices(){
-
-    }
+public class SecuritiesCurrentPriceServiceImpl {
+//
+//    @Override
+//    public SecuritiesCurrentPrice addSecuritiesCurrentPrice(SecuritiesCurrentPrice securitiesCurrentPrice){
+//
+//
+//    }
+//
+//    @Override
+//    public SecuritiesCurrentPrice updateSecuritiesCurrentPrice(SecuritiesCurrentPrice securitiesCurrentPrice){
+//
+//    }
+//
+//    @Override
+//    public String deleteSecuritiesCurrentPrice(Integer id){
+//
+//    }
+//
+//    @Override
+//    public List<SecuritiesCurrentPrice> getAllSecuritiesCurrentPrices(){
+//
+//    }
     
 
     

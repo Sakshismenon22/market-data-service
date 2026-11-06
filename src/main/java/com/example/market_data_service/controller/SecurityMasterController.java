@@ -18,14 +18,14 @@ public class SecurityMasterController {
 
     private final SecurityMasterService securityMasterService;
 
-    @PostMapping
+    @PostMapping("/add-security")
     public ResponseEntity<Response<SecurityMaster>> addSecurity(@RequestBody SecurityMaster securityMaster){
 
         return ResponseEntity.ok(new Response<>(200,true,securityMasterService.addSecurity(securityMaster),"Security Added Successfully!", LocalDateTime.now()));
 
     }
 
-    @GetMapping
+    @GetMapping("/get-all-securities")
     public ResponseEntity<Response<List<SecurityMaster>>> getAllSecurity(){
         return ResponseEntity.ok(new Response<>(200,true,securityMasterService.getAllSecurities(),"All securities are retrieved.", LocalDateTime.now()));
 

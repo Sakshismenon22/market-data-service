@@ -7,8 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import com.example.market_data_service.model.SecuritiesCurrentPrice;
 
-@Repository 
-public interface SecuritiesCurrentPriceRepository extends JpaRepository<SecuritiesCurrentPrice, Integer> {
-    
-    Optional<SecuritiesCurrentPrice> findBySecurityId(Integer securityId);
+@Repository
+public interface SecuritiesCurrentPriceRepository
+        extends JpaRepository<SecuritiesCurrentPrice, Long> {
+
+    Optional<SecuritiesCurrentPrice>
+    findBySecurityId(Integer securityId);
 }
